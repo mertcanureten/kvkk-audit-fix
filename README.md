@@ -13,9 +13,29 @@ Projenin veri akışlarını ve ilgili belgelerini inceler; uygulanabilir mevzua
 
 ## Kurulum ve kullanım
 
-Bu deponun içeriğini ajanınızın skill dizininde `kvkk-audit-fix` klasörüne yerleştirin. Codex için varsayılan kullanıcı skill konumu `~/.codex/skills/kvkk-audit-fix` dizinidir.
+### Claude Code
 
-Projenin çalışma alanında:
+Kullanıcı genelinde kurulum (hedef klasör henüz yoksa):
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/mertcanureten/kvkk-audit-fix.git ~/.claude/skills/kvkk-audit-fix
+```
+
+Yalnız belirli projede kullanmak için aynı depoyu o projenin `.claude/skills/kvkk-audit-fix` dizinine klonlayın. Mevcut kurulum varsa üzerine klonlamayın; kendi değişikliklerinizi koruyarak güncelleyin.
+
+Claude Code içinde:
+
+```text
+/kvkk-audit-fix Bu projeyi KVKK açısından denetle, kanıtlı bulguları raporla,
+güvenli yerel düzeltmeleri uygula ve test et.
+```
+
+Paket, [Claude Code’un belgelenmiş skill biçimi](https://code.claude.com/docs/en/skills) ile uyumludur: `SKILL.md`, `name`/`description` ön bilgisi ve göreli destek dosyaları kullanır. `agents/openai.yaml` denetimin çalışması için gerekli değildir. Python 3 yalnız rapor doğrulayıcısı için gerekir. Gerçek projede Claude Code ile uçtan uca denetim testi henüz yapılmamıştır.
+
+### Codex
+
+Depoyu `~/.codex/skills/kvkk-audit-fix` dizinine yerleştirin. Projenin çalışma alanında:
 
 ```text
 $kvkk-audit-fix Bu projeyi KVKK açısından denetle, veri akışlarını çıkar,

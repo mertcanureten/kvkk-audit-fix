@@ -6,6 +6,10 @@ description: Türkiye KVKK uyumu için yazılım projelerini, veri akışların�
 
 Amaç: projenin gerçek veri işleme davranışını yürürlükteki yükümlülüklerle karşılaştır; doğrulanmış teknik sorunları gider; hukuki/kurumsal eksikleri sahip, gereken karar ve kabul ölçütüyle raporla. Sadece politika metni ekleyerek işi tamamlanmış sayma. Türkçe çıktı üret; kullanıcının dil/format tercihini koru.
 
+## Ajanlar arası kullanım
+
+Bu paket standart `SKILL.md` biçimini kullanır. Claude Code'da `/kvkk-audit-fix`, Codex'te `$kvkk-audit-fix` ile çağrılır. `agents/openai.yaml` Codex arayüz metaverisidir; denetim iş akışı ona bağımlı değildir. Destek dosyalarının yollarını bu `SKILL.md` dosyasının bulunduğu dizine göre çöz; incelenen projenin çalışma dizinine göre değil. Doğrulayıcıyı `python3 <skill-dizini>/scripts/validate_report.py <rapor-yolu>/bulgular.json` ile çalıştır. Python 3 yoksa rapor kurallarını elle kontrol et ve otomatik doğrulamanın çalışmadığını belirt. İnternet veya tarayıcı aracı yoksa erişilemeyen mevzuat/runtime kontrollerini açıkça kaydet, sonuç uydurma.
+
 ## Çalışma biçimi ve sınırlar
 
 - `denetle`: salt okunur inceleme ve rapor; uygulama kodunu değiştirme.
