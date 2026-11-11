@@ -1,0 +1,4 @@
+interface:
+  display_name: "KVKK Denetim ve Düzeltme"
+  short_description: "Projelerde KVKK denetimi, düzeltme ve kanıtlı rapor"
+  default_prompt: "$kvkk-audit-fix ile bu projeyi KVKK açısından incele, kanıtlı bulguları raporla, kapsam içindeki güvenli düzeltmeleri uygula ve test et."
